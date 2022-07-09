@@ -2,6 +2,7 @@ from os import system
 from travel_data import Travel_data
 from seed import seed
 
+travel_dict = seed()
 
 def print_options():
     print("1. Travel Directory")
@@ -13,20 +14,24 @@ def print_options():
     option = input("Select your option (1-6): ")
     return option
 
-travel_dict = seed()
-
 def leaderboard():
-    pass
+    sorted  = travel_dict.leaderboard()
+    for item in sorted:
+        item.show_data()
+
+
 def add_travel():
     name = input("What was the name of location? ")
     date = input(f"What was the date you went to {name}? e.g 22/2/22:   ")
     duration = input(f"How long were you at {name}? e.g 5 Days:     ")
     rating = input(f"What would you rate the trip when you went to {name} on {date} for {duration}? (1 being worst, 10 being best):      ")
     travel_dict.add_travels(name, date, duration, rating)
+    print(f"{name}, {date}, {duration}, {rating} has been added to the travel log!")
 def edit_travel():
     pass
 def remove_travels():
-    pass
+    date = input("What was the date of which destination you would like to remove? (1/11/11):   ")
+    travel_dict.remove_travels(date)
 
 option = ""
 
