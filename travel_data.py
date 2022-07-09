@@ -2,11 +2,12 @@ from unicodedata import name
 
 
 class Travel_data:
-    def __init__(self, name, date, duration, rating):
+    def __init__(self, name, date, duration, rating, comment):
         self.name = name
         self.date = date
         self.duration = duration
         self.rating = rating
+        self.comment = comment
 
     def show_data(self):
         print(f"{self.name}, {self.date}, {self.duration}, {self.rating}")
@@ -17,5 +18,6 @@ class Travel_data:
         Date: {self.date}
         Duration of stay: {self.duration}
         Rating out of 10: {self.rating}
+        Additional comments: {self.comment}
         
         """)

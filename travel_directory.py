@@ -14,8 +14,8 @@ class TravelDirectory:
     def print_header(self):
         print("NAME | DATE  | DURATION  | RATING")
 
-    def add_travels(self, name, date, duration, rating):
-        self.travel_dict.append(Travel_data(name, date, duration, rating))
+    def add_travels(self, name, date, duration, rating, comment):
+        self.travel_dict.append(Travel_data(name, date, duration, rating, comment))
 
     def remove_travels(self,date):
         for item in self.travel_dict:
@@ -24,6 +24,12 @@ class TravelDirectory:
                 self.travel_dict.remove(item)
                 return print(f"The time you traveled to {saved} on the {date} has been removed.")
         return print(f"{date} you haven't been anywhere on this date.")
+
+    def get_by_date(self, date):
+        for item in self.travel_dict:
+            if item.date == date:
+                return item
+        return None
 
     def leaderboard(self):
         sort = sorted(self.travel_dict, key=lambda x: x.rating, reverse=True)

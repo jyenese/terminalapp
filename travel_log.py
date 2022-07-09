@@ -23,12 +23,20 @@ def leaderboard():
         item.show_data()
 
 def describe_travel():
+    travel_dict.print_menu()
+    date = input(f"What was the date from the travel log? e.g 22/2/22:   ")
+    item = travel_dict.get_by_date(date)
+    if item == None:
+        print("Nothing found on that date")
+        return
+    item.pretty_print()
 
 
 def add_travel():
     name = input("What was the name of location? ")
     date = input(f"What was the date you went to {name}? e.g 22/2/22:   ")
     duration = input(f"How long were you at {name}? e.g 5 Days:     ")
+    comment = input(f"Additional comments about the trip: ")
     rating = 0
     while True:
         rating = float(input(f"What would you rate the trip when you went to {name} on {date} for {duration}? (1 being worst, 10 being best):      "))
@@ -36,7 +44,7 @@ def add_travel():
             break
         else:
             print("Incorrect value")
-    travel_dict.add_travels(name, date, duration, rating)
+    travel_dict.add_travels(name, date, duration, rating, comment)
     print(f"{name}, {date}, {duration}, {rating} has been added to the travel log!")
 
 def edit_travel():
@@ -47,7 +55,7 @@ def remove_travels():
 
 option = ""
 
-while option != "6":
+while option != "7":
     system('clear')
     option = print_options()
     system('clear')
