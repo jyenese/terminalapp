@@ -6,11 +6,14 @@ class TravelDirectory:
         self.travel_dict = travel_dict
 
     def print_menu(self):
-        print("""Welcome to MY TRAVEL LOG! 
-        NAME/DATE/DURATION/RATING""")
+        print("Welcome to MY TRAVEL LOG!")
+        self.print_header()
         for item in self.travel_dict:
             item.show_data()
     
+    def print_header(self):
+        print("NAME | DATE  | DURATION  | RATING")
+
     def add_travels(self, name, date, duration, rating):
         self.travel_dict.append(Travel_data(name, date, duration, rating))
 
