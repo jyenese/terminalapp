@@ -11,7 +11,4 @@ class Travel_data:
     def show_data(self):
         print(f"{self.name}, {self.date}, {self.duration}, {self.rating}")
 
-dest1 = Travel_data("Bali", "22/2/22","5 Days", "*4")
-print(dest1.show_data())
-
 
