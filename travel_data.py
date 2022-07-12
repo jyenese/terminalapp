@@ -21,3 +21,13 @@ class Travel_data:
         Additional comments: {self.comment}
         
         """)
+
+class Wishlist_data:
+    def __init__(self, name, date, duration, cost):
+        self.name = name
+        self.date = date
+        self.duration = duration
+        self.cost = cost
+        
+    def wishlist_data(self):
+        print(f"{self.name}, {self.date}, {self.duration}, {self.cost}")
