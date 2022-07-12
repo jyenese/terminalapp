@@ -1,6 +1,7 @@
 from sys import setdlopenflags
 from travel_data import Travel_data
 
+
 class TravelDirectory:
     def __init__(self, travel_dict):
         self.travel_dict = travel_dict
@@ -11,8 +12,10 @@ class TravelDirectory:
     def print_menu(self):
         print("Welcome to MY TRAVEL LOG!")
         self.print_header()
+        self.header_space()
         for item in self.travel_dict:
             item.show_data()
+        self.header_space()
     
     def print_header(self):
         print("NAME | DATE  | DURATION  | RATING")

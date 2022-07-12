@@ -18,9 +18,11 @@ def print_options():
 def leaderboard():
     print("Welcome to the leaderboard")
     travel_dict.print_header()
+    travel_dict.header_space()
     sorted  = travel_dict.leaderboard()
     for item in sorted:
         item.show_data()
+    travel_dict.header_space()
 
 def describe_travel():
     travel_dict.header_space()
