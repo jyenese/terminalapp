@@ -5,6 +5,9 @@ class TravelDirectory:
     def __init__(self, travel_dict):
         self.travel_dict = travel_dict
 
+    def header_space(self):
+        print(("--------------------------------------------------------"))
+    
     def print_menu(self):
         print("Welcome to MY TRAVEL LOG!")
         self.print_header()

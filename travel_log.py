@@ -10,7 +10,7 @@ def print_options():
     print("3. Add Future/Previous travels.")
     print("4. Delete a destination from the menu.")
     print("5. Edit travels.")
-    print("6. Describe an item in travel log")
+    print("6. More information panel.")
     print("7. Exit")
     option = input("Select your option (1-7): ")
     return option
@@ -23,7 +23,9 @@ def leaderboard():
         item.show_data()
 
 def describe_travel():
+    travel_dict.header_space()
     travel_dict.print_menu()
+    travel_dict.header_space()
     date = input(f"What was the date from the travel log? e.g 22/2/22:   ")
     item = travel_dict.get_by_date(date)
     if item == None:
