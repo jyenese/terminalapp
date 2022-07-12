@@ -16,7 +16,8 @@ def print_options():
     return option
 
 def leaderboard():
-    print("Welcome to the leaderboard")
+    print("            Welcome to the leaderboard")
+    print("     10 being best, 1 being worst (Top-Bottom)")
     travel_dict.print_header()
     travel_dict.header_space()
     sorted  = travel_dict.leaderboard()
@@ -54,12 +55,17 @@ def add_travel():
 def edit_travel():
     pass
 def remove_travels():
+    travel_dict.print_menu()
     date = input("What was the date of which destination you would like to remove? (1/11/11):   ")
     travel_dict.remove_travels(date)
 
+def wishlist():
+    input("Where is somewhere you'd like to travel to in the future?:  ")
+    
+
 option = ""
 
-while option != "7":
+while option != "8":
     system('clear')
     option = print_options()
     system('clear')
@@ -76,6 +82,8 @@ while option != "7":
     elif option == "6":
         describe_travel()
     elif option == "7":
+        wishlist()
+    elif option == "8":    
         continue
     else:
         print("Invalid option")
