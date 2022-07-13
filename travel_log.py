@@ -3,16 +3,17 @@ from travel_data import Travel_data
 from seed import seed
 from seed import wishlist_seed
 from travel_data import Wishlist_data
+from wishlist import Wishlist
 
 travel_dict = seed()
 
 def print_options():
     print("1. Travel Directory")
     print("2. Check travel log leaderboard")
-    print("3. Add Future/Previous travels.")
-    print("4. Delete a destination from the menu.")
-    print("5. Edit travels.")
-    print("6. More information panel.")
+    print("3. Add Future/Previous travels")
+    print("4. Delete a destination from the menu")
+    print("5. Edit travels")
+    print("6. More information panel")
     print("7. Wishlist")
     print("8. Exit")
     option = input("Select your option (1-8): ")
@@ -54,18 +55,20 @@ def add_travel():
     print(f"{name}, {date}, {duration}, {rating} has been added to the travel log!")
 
 def edit_travel():
-    pass
+    travel_dict.print_menu()
+    name = input("What date of destination do you want to edit? e.g 11/11/11 ")
+    travel_dict.travel_edit(name)
+    
+
 def remove_travels():
     travel_dict.print_menu()
-    date = input("What was the date of which destination you would like to remove? (1/11/11):   ")
+    date = input("What was the date of which destination you would like to remove? (11/11/11):   ")
     travel_dict.remove_travels(date)
 
 def wishlist():
     wishlist_dict = wishlist_seed()
     option = input("What would you like to do? (view or add)?: ")
-    if option == "view":
-        wishlist_dict.wishlist_menu()
-    elif option == "add":
+    if option == "add":
         name = input("Where is somewhere you'd like to travel in the future?:  ")
         date = input(f"When would you like to travel to {name}?:  ")
         duration = input(f"How long would you like to spend in {name}? e.g 5 Days:     ")
@@ -73,10 +76,12 @@ def wishlist():
         wishlist_dict.wishlist_add(name, date, duration, cost)
         print(f"{name}, {date}, {duration}, {cost} has been added to the wishlist!")
         wishlist_dict.wishlist_menu()
+    elif option == "view":
+        wishlist_dict.wishlist_menu()
     else:
         print("Invlaid")
+    # Why is this not getting added when 'add' function is displayed for the wishlist
     
-    return option
 
 
 option = ""

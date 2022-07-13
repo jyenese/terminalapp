@@ -41,5 +41,7 @@ class TravelDirectory:
         sort = sorted(self.travel_dict, key=lambda x: x.rating, reverse=True)
         return sort
 
+    def travel_edit(self):
+        pass
 
         
