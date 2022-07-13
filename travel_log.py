@@ -1,6 +1,8 @@
 from os import system
 from travel_data import Travel_data
 from seed import seed
+from seed import wishlist_seed
+from travel_data import Wishlist_data
 
 travel_dict = seed()
 
@@ -11,8 +13,9 @@ def print_options():
     print("4. Delete a destination from the menu.")
     print("5. Edit travels.")
     print("6. More information panel.")
-    print("7. Exit")
-    option = input("Select your option (1-7): ")
+    print("7. Wishlist")
+    print("8. Exit")
+    option = input("Select your option (1-8): ")
     return option
 
 def leaderboard():
@@ -26,9 +29,7 @@ def leaderboard():
     travel_dict.header_space()
 
 def describe_travel():
-    travel_dict.header_space()
-    travel_dict.print_menu()
-    travel_dict.header_space()
+    travel_dict.print_menu() 
     date = input(f"What was the date from the travel log? e.g 22/2/22:   ")
     item = travel_dict.get_by_date(date)
     if item == None:
@@ -60,8 +61,18 @@ def remove_travels():
     travel_dict.remove_travels(date)
 
 def wishlist():
-    input("Where is somewhere you'd like to travel to in the future?:  ")
-    
+    wishlist_dict = wishlist_seed()
+    option = input("What would you like to do? (view or add)?: ")
+    if option == "view":
+        wishlist_dict.wishlist_menu()
+    else: 
+        return option
+
+    name = input("Where is somewhere you'd like to travel in the future?:  ")
+    date = input(f"When would you like to travel to {name}?:  ")
+    duration = input(f"How long would you like to spend in {name}? e.g 5 Days:     ")
+    cost = input(f"How much is it going to roughly cost to travel to {name} for {duration}?: ")
+
 
 option = ""
 

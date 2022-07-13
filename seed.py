@@ -1,6 +1,7 @@
 from travel_data import Travel_data
 from travel_directory import TravelDirectory
-from travel_data import Wishlist
+from travel_data import Wishlist_data
+from wishlist import Wishlist
 
 def seed():
     dest1 = Travel_data("Queenstown, New Zealend", "20/7/2015", "10 Days", 8.5, "beers")
@@ -23,8 +24,14 @@ def seed():
     travel_dict = TravelDirectory([dest1, dest2, dest3, dest4, dest5, dest6, dest7, dest8, dest9, dest10, dest11, dest12, dest13, dest14, dest15])
     return travel_dict
 
-def seed2():
-    list1 = Wishlist("Rusutsu, Japan","16/3/2023","10 days","$6000")
+def wishlist_seed():
+    list1 = Wishlist_data("Rusutsu, Japan", "16/3/2023", "10 days", "$6000")
+    list2 = Wishlist_data("Tokyo, Japan", "25/3/2023", "10 days", "$3000")
+    wishlist_dict = Wishlist([list1, list2])
+    return wishlist_dict
+    
+
+
 
 
 
