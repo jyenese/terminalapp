@@ -65,13 +65,18 @@ def wishlist():
     option = input("What would you like to do? (view or add)?: ")
     if option == "view":
         wishlist_dict.wishlist_menu()
-    else: 
-        return option
-
-    name = input("Where is somewhere you'd like to travel in the future?:  ")
-    date = input(f"When would you like to travel to {name}?:  ")
-    duration = input(f"How long would you like to spend in {name}? e.g 5 Days:     ")
-    cost = input(f"How much is it going to roughly cost to travel to {name} for {duration}?: ")
+    elif option == "add":
+        name = input("Where is somewhere you'd like to travel in the future?:  ")
+        date = input(f"When would you like to travel to {name}?:  ")
+        duration = input(f"How long would you like to spend in {name}? e.g 5 Days:     ")
+        cost = input(f"How much is it going to roughly cost to travel to {name} for {duration}?: ")
+        wishlist_dict.wishlist_add(name, date, duration, cost)
+        print(f"{name}, {date}, {duration}, {cost} has been added to the wishlist!")
+        wishlist_dict.wishlist_menu()
+    else:
+        print("Invlaid")
+    
+    return option
 
 
 option = ""
