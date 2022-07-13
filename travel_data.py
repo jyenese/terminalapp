@@ -29,5 +29,5 @@ class Wishlist_data:
         self.duration = duration
         self.cost = cost
         
-    def wishlist_items(self):
+    def print(self):
         print(f"{self.name}, {self.date}, {self.duration}, {self.cost}")

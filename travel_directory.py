@@ -41,7 +41,23 @@ class TravelDirectory:
         sort = sorted(self.travel_dict, key=lambda x: x.rating, reverse=True)
         return sort
 
-    def travel_edit(self):
-        pass
+    def travel_edit(self, item, attribute, value):
+        if attribute == "name":
+            item.name = value
+            return "name updated okay"
+        if attribute == "date":
+            item.date = value
+            return "name updated okay"
+        if attribute == "duration":
+            item.duration = value
+            return "name updated okay"
+        if attribute == "rating":
+            item.rating = value
+            return "name updated okay"
+        return "invalid"
+        
+            
+            
+        
 
         

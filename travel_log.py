@@ -6,6 +6,7 @@ from travel_data import Wishlist_data
 from wishlist import Wishlist
 
 travel_dict = seed()
+wishlist_dict = wishlist_seed()
 
 def print_options():
     print("1. Travel Directory")
@@ -56,8 +57,15 @@ def add_travel():
 
 def edit_travel():
     travel_dict.print_menu()
-    name = input("What date of destination do you want to edit? e.g 11/11/11 ")
-    travel_dict.travel_edit(name)
+    date = input("Whats the date of the destination you want to edit? e.g 11/11/11 ")
+    item = travel_dict.get_by_date(date)
+    if item == None:
+        print("Nothing found on that date")
+        return
+    edit = input("What do you want to edit? (name, date, duration, rating): ")
+    #Todo Add validation
+    updated = input(f"Enter your new {edit}: ")
+    travel_dict.travel_edit(item, edit, updated)
     
 
 def remove_travels():
@@ -66,7 +74,6 @@ def remove_travels():
     travel_dict.remove_travels(date)
 
 def wishlist():
-    wishlist_dict = wishlist_seed()
     option = input("What would you like to do? (view or add)?: ")
     if option == "add":
         name = input("Where is somewhere you'd like to travel in the future?:  ")
@@ -80,7 +87,6 @@ def wishlist():
         wishlist_dict.wishlist_menu()
     else:
         print("Invlaid")
-    # Why is this not getting added when 'add' function is displayed for the wishlist
     
 
 

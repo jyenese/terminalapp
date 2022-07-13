@@ -10,7 +10,7 @@ class Wishlist:
         print("  NAME  |  DATE  |  DURATION  |  COST")
         print(("--------------------------------------------------------"))
         for item in self.wishlist_dict:
-            item.wishlist_items()
+            item.print()
         print(("--------------------------------------------------------"))
         
     def wishlist_add(self, name, date, duration, cost):
