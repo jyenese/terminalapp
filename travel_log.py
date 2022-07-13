@@ -57,7 +57,7 @@ def add_travel():
 
 def edit_travel():
     travel_dict.print_menu()
-    date = input("Whats the date of the destination you want to edit? e.g 11/11/11 ")
+    date = input("Whats the date of the destination you want to edit? e.g 11/11/11:  ")
     item = travel_dict.get_by_date(date)
     if item == None:
         print("Nothing found on that date")
@@ -65,7 +65,10 @@ def edit_travel():
     edit = input("What do you want to edit? (name, date, duration, rating): ")
     #Todo Add validation
     updated = input(f"Enter your new {edit}: ")
-    travel_dict.travel_edit(item, edit, updated)
+    result = travel_dict.travel_edit(item, edit, updated)
+    print(result)
+
+    
     
 
 def remove_travels():
