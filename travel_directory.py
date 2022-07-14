@@ -9,6 +9,9 @@ class TravelDirectory:
     def header_space(self):
         print(("--------------------------------------------------------"))
     
+    def print_header(self):
+        print("        NAME | DATE  | DURATION  | RATING")
+    
     def print_menu(self):
         print("            Welcome to MY TRAVEL LOG!")
         self.print_header()
@@ -16,9 +19,6 @@ class TravelDirectory:
         for item in self.travel_dict:
             item.show_data()
         self.header_space()
-    
-    def print_header(self):
-        print("        NAME | DATE  | DURATION  | RATING")
 
     def add_travels(self, name, date, duration, rating, comment):
         self.travel_dict.append(Travel_data(name, date, duration, rating, comment))
