@@ -44,16 +44,16 @@ class TravelDirectory:
     def travel_edit(self, item, attribute, value):
         if attribute == "name":
             item.name = value
-            return "name updated okay"
+            return "name updated"
         if attribute == "date":
             item.date = value
-            return "name updated okay"
+            return "date updated"
         if attribute == "duration":
             item.duration = value
-            return "name updated okay"
+            return "durated updated"
         if attribute == "rating":
             item.rating = value
-            return "name updated okay"
+            return "rating updated"
         return "invalid"
         
             
