@@ -168,4 +168,6 @@ I didn't really use a flow chart to vibe my idea with so, it was more or less ju
 
 ![process2](./resources/travel_info2.jpg)
 
+![process2](./resources/checklist.png)
 
+![process2](./resources/presentation/testing.png)

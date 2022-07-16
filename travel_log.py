@@ -63,7 +63,7 @@ def edit_travel():
         print("Nothing found on that date")
         return
     edit = input("What do you want to edit? (name, date, duration, rating): ")
-    #Todo Add validation
+    #Might need validation, dont think its neccessary
     updated = input(f"Enter your new {edit}: ")
     result = travel_dict.travel_edit(item, edit, updated)
     print(result)
